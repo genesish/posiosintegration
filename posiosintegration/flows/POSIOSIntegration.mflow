@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="POSIOSIntegration">
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#1">
+        <properties>
+            <property value="frontDeskDS" name="id"/>
+            <property value="frontDeskDS" name="name"/>
+            <property value="org.springframework.jdbc.datasource.DriverManagerDataSource" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="2" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="driverClassName" name="name"/>
+                <property value="com.mysql.jdbc.Driver" name="value"/>
+                <property value="3" name="auxiliary;wrapIn"/>
+                <property value="3" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;1">
+                <property value="url" name="name"/>
+                <property value="jdbc:mysql://localhost:3306/frontdesk" name="value"/>
+                <property value="4" name="auxiliary;wrapIn"/>
+                <property value="4" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;2">
+                <property value="username" name="name"/>
+                <property value="root" name="value"/>
+                <property value="5" name="auxiliary;wrapIn"/>
+                <property value="5" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;3">
+                <property value="password" name="name"/>
+                <property value="password" name="value"/>
+                <property value="6" name="auxiliary;wrapIn"/>
+                <property value="6" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#2">
+        <properties>
+            <property value="POSIOSHotelRoom" name="id"/>
+            <property value="POSIOSHotelRoom" name="name"/>
+            <property value="com.atigus.posios.POSIOSHotelRoomImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="7" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="7" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="7" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="7" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="7" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="pOSIOSLoginToken" name="ref"/>
+                <property value="pOSIOSLoginToken" name="name"/>
+                <property value="8" name="auxiliary;wrapIn"/>
+                <property value="8" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#3">
+        <properties>
+            <property value="POSIOSCompany" name="id"/>
+            <property value="POSIOSCompany" name="name"/>
+            <property value="com.atigus.posios.POSIOSCompanyImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="9" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="9" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="9" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="9" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="9" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#4">
+        <properties>
+            <property value="POSIOSReceipt" name="id"/>
+            <property value="POSIOSReciept" name="name"/>
+            <property value="com.atigus.posios.POSIOSReceiptImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="10" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="10" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="10" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="10" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="10" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="POSIOSCompany" name="ref"/>
+                <property value="pOSIOSCompany" name="name"/>
+                <property value="11" name="auxiliary;wrapIn"/>
+                <property value="11" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#5">
+        <properties>
+            <property value="POSIOSCheckVersion" name="id"/>
+            <property value="POSIOSCheckVersion" name="name"/>
+            <property value="com.atigus.posios.POSIOSCheckVersionImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="12" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="12" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="12" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="12" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="12" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="pOSIOSLoginToken" name="ref"/>
+                <property value="pOSIOSLoginToken" name="name"/>
+                <property value="13" name="auxiliary;wrapIn"/>
+                <property value="13" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#6">
+        <properties>
+            <property value="POSIOSGetCompany" name="id"/>
+            <property value="POSIOSGetCompany" name="name"/>
+            <property value="com.atigus.posios.POSIOSGetCompanyImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="14" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="14" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="14" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="14" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="14" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="pOSIOSLoginToken" name="ref"/>
+                <property value="pOSIOSLoginToken" name="name"/>
+                <property value="15" name="auxiliary;wrapIn"/>
+                <property value="15" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#7">
+        <properties>
+            <property value="POSIOSGetTodayReceipts" name="id"/>
+            <property value="POSIOSGetTodayReceipts" name="name"/>
+            <property value="com.atigus.posios.POSIOSTodayReceiptImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="16" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="16" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="16" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="16" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="16" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="pOSIOSLoginToken" name="ref"/>
+                <property value="pOSIOSLoginToken" name="name"/>
+                <property value="17" name="auxiliary;wrapIn"/>
+                <property value="17" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#8">
+        <properties>
+            <property value="POSIOSGuestReceipt" name="id"/>
+            <property value="POSIOSGuestReceipt" name="name"/>
+            <property value="com.atigus.posios.request.POSIOSGuestReceipt" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="18" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="18" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="18" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="18" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="18" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="POSIOSReceipt" name="ref"/>
+                <property value="pOSIOSReceipt" name="name"/>
+                <property value="19" name="auxiliary;wrapIn"/>
+                <property value="19" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;1">
+                <property value="pOSIOSLoginToken" name="ref"/>
+                <property value="pOSIOSLoginToken" name="name"/>
+                <property value="20" name="auxiliary;wrapIn"/>
+                <property value="20" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;2">
+                <property value="POSIOSCompany" name="ref"/>
+                <property value="pOSIOSCompany" name="name"/>
+                <property value="21" name="auxiliary;wrapIn"/>
+                <property value="21" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#9">
+        <properties>
+            <property value="POSIOSPostGuest" name="id"/>
+            <property value="POSIOSPostGuest" name="name"/>
+            <property value="com.atigus.posios.POSIOSPostGuestImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="22" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="22" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="22" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="22" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="22" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="pOSIOSLoginToken" name="ref"/>
+                <property value="pOSIOSLoginToken" name="name"/>
+                <property value="23" name="auxiliary;wrapIn"/>
+                <property value="23" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;1">
+                <property value="POSIOSHotelRoom" name="ref"/>
+                <property value="pOSIOSHotelRoom" name="name"/>
+                <property value="24" name="auxiliary;wrapIn"/>
+                <property value="24" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;2">
+                <property value="POSIOSCompany" name="ref"/>
+                <property value="pOSIOSCompany" name="name"/>
+                <property value="25" name="auxiliary;wrapIn"/>
+                <property value="25" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#10">
+        <properties>
+            <property value="checkInJob" name="id"/>
+            <property value="checkInJob" name="name"/>
+            <property value="com.atigus.posios.job.POSIOSCheckInJob" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="26" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="26" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="26" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="26" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="26" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="frontDeskDS" name="ref"/>
+                <property value="frontDeskDS" name="name"/>
+                <property value="27" name="auxiliary;wrapIn"/>
+                <property value="27" name="auxiliary;index"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;1">
+                <property value="POSIOSPostGuest" name="ref"/>
+                <property value="pOSIOSPostGuest" name="name"/>
+                <property value="28" name="auxiliary;wrapIn"/>
+                <property value="28" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#11">
+        <properties>
+            <property value="checkInNotificationJob" name="id"/>
+            <property value="checkInNotificationJob" name="name"/>
+            <property value="com.atigus.posios.job.IOSCheckInNotificationJob" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="29" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="29" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="29" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="29" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property value="29" name="auxiliary;index"/>
+            <property value="1" name="auxiliary;wrapIn"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/property;0">
+                <property value="frontDeskDS" name="ref"/>
+                <property value="frontDeskDS" name="name"/>
+                <property value="30" name="auxiliary;wrapIn"/>
+                <property value="30" name="auxiliary;index"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element type="http://www.springframework.org/schema/beans/bean" name="Bean" entity-id="Bean#12">
+        <properties>
+            <property value="pOSIOSLoginToken" name="id"/>
+            <property value="pOSIOSLoginToken" name="name"/>
+            <property value="com.atigus.posios.POSIOSLoginTokenImpl" name="class"/>
+            <property name="parent"/>
+            <property name="scope"/>
+            <property name="children"/>
+            <property value="32" name="auxiliary;index"/>
+            <property value="31" name="auxiliary;wrapIn"/>
+            <property value="32" name="auxiliary;index"/>
+            <property value="31" name="auxiliary;wrapIn"/>
+            <property name="abstract"/>
+            <property name="lazy-init"/>
+            <property name="autowire"/>
+            <property name="depends-on"/>
+            <property name="autowire-candidate"/>
+            <property name="primary"/>
+            <property name="init-method"/>
+            <property name="destroy-method"/>
+            <property name="factory-method"/>
+            <property name="factory-bean"/>
+            <property value="32" name="auxiliary;index"/>
+            <property value="31" name="auxiliary;wrapIn"/>
+            <property value="32" name="auxiliary;index"/>
+            <property value="31" name="auxiliary;wrapIn"/>
+            <property value="32" name="auxiliary;index"/>
+            <property value="31" name="auxiliary;wrapIn"/>
+        </properties>
+    </global-element>
+    <flow SubFlow="false" name="getTodayReceipts" entity-id="72dbec28-1204-4f58-92eb-250f27f19e20">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="33" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="33" name="auxiliary;index"/>
+            <property value="33" name="auxiliary;index"/>
+            <property value="33" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#1">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="HTTP#1">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="request-response" name="exchange-pattern"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property name="httpLabel"/>
+                    <property value="localhost" name="host"/>
+                    <property value="9191" name="port"/>
+                    <property value="posios/todayReceipts" name="path"/>
+                    <property name="method"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="followRedirects"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property name="user"/>
+                    <property name="password"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property name="contentType"/>
+                    <property name="keep-alive"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property value="34" name="auxiliary;index"/>
+                    <property value="34" name="auxiliary;index"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" name="Object to String" entity-id="Object to String#1">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property value="35" name="auxiliary;index"/>
+                    <property name="mimeType"/>
+                    <property value="35" name="auxiliary;index"/>
+                    <property value="35" name="auxiliary;index"/>
+                    <property value="35" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="Java" entity-id="Java#1">
+                <properties>
+                    <property value="36" name="auxiliary;index"/>
+                    <property value="36" name="auxiliary;index"/>
+                    <property value="36" name="auxiliary;index"/>
+                    <property name="class"/>
+                    <property value="36" name="auxiliary;index"/>
+                    <property value="36" name="auxiliary;index"/>
+                    <property value="36" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/spring-object;0">
+                        <property value="POSIOSGuestReceipt" name="bean"/>
+                        <property value="37" name="auxiliary;wrapIn"/>
+                        <property value="37" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/json/object-to-json-transformer" name="Object to JSON" entity-id="Object to JSON#1">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property value="38" name="auxiliary;index"/>
+                    <property name="mimeType"/>
+                    <property value="38" name="auxiliary;index"/>
+                    <property value="38" name="auxiliary;index"/>
+                    <property name="mapper-ref"/>
+                    <property name="sourceClass"/>
+                    <property value="38" name="auxiliary;index"/>
+                    <property value="38" name="auxiliary;index"/>
+                    <property value="38" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+            <pattern type="org.mule.tooling.ui.modules.core.pattern.echo" name="Echo" entity-id="Echo#1">
+                <properties>
+                    <property value="39" name="auxiliary;index"/>
+                    <property value="39" name="auxiliary;index"/>
+                    <property value="39" name="auxiliary;index"/>
+                    <property value="39" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="insertGuest" entity-id="768aafd8-6088-44aa-b016-fc4e72aa2b84">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="40" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="40" name="auxiliary;index"/>
+            <property value="40" name="auxiliary;index"/>
+            <property value="40" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#2">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="HTTP#2">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="request-response" name="exchange-pattern"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property name="httpLabel"/>
+                    <property value="localhost" name="host"/>
+                    <property value="9191" name="port"/>
+                    <property value="posios/postGuest" name="path"/>
+                    <property name="method"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="followRedirects"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property name="user"/>
+                    <property name="password"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property name="contentType"/>
+                    <property name="keep-alive"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property value="41" name="auxiliary;index"/>
+                    <property value="41" name="auxiliary;index"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" name="Object to String" entity-id="Object to String#2">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property value="42" name="auxiliary;index"/>
+                    <property name="mimeType"/>
+                    <property value="42" name="auxiliary;index"/>
+                    <property value="42" name="auxiliary;index"/>
+                    <property value="42" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="Java" entity-id="Java#2">
+                <properties>
+                    <property value="43" name="auxiliary;index"/>
+                    <property value="43" name="auxiliary;index"/>
+                    <property value="43" name="auxiliary;index"/>
+                    <property name="class"/>
+                    <property value="43" name="auxiliary;index"/>
+                    <property value="43" name="auxiliary;index"/>
+                    <property value="43" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/spring-object;0">
+                        <property value="POSIOSPostGuest" name="bean"/>
+                        <property value="44" name="auxiliary;wrapIn"/>
+                        <property value="44" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/json/object-to-json-transformer" name="Object to JSON" entity-id="Object to JSON#2">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property value="45" name="auxiliary;index"/>
+                    <property name="mimeType"/>
+                    <property value="45" name="auxiliary;index"/>
+                    <property value="45" name="auxiliary;index"/>
+                    <property name="mapper-ref"/>
+                    <property name="sourceClass"/>
+                    <property value="45" name="auxiliary;index"/>
+                    <property value="45" name="auxiliary;index"/>
+                    <property value="45" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+            <pattern type="org.mule.tooling.ui.modules.core.pattern.echo" name="Echo" entity-id="Echo#2">
+                <properties>
+                    <property value="46" name="auxiliary;index"/>
+                    <property value="46" name="auxiliary;index"/>
+                    <property value="46" name="auxiliary;index"/>
+                    <property value="46" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="checkVersion" entity-id="2343bc0d-aea4-4f90-814d-99220c902d32">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="47" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="47" name="auxiliary;index"/>
+            <property value="47" name="auxiliary;index"/>
+            <property value="47" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#3">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="HTTP#3">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="request-response" name="exchange-pattern"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property name="httpLabel"/>
+                    <property value="localhost" name="host"/>
+                    <property value="9191" name="port"/>
+                    <property value="posios/checkVersion" name="path"/>
+                    <property name="method"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="followRedirects"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property name="user"/>
+                    <property name="password"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property name="contentType"/>
+                    <property name="keep-alive"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property value="48" name="auxiliary;index"/>
+                    <property value="48" name="auxiliary;index"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" name="Object to String" entity-id="Object to String#3">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property value="49" name="auxiliary;index"/>
+                    <property name="mimeType"/>
+                    <property value="49" name="auxiliary;index"/>
+                    <property value="49" name="auxiliary;index"/>
+                    <property value="49" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="Java" entity-id="Java#3">
+                <properties>
+                    <property value="50" name="auxiliary;index"/>
+                    <property value="50" name="auxiliary;index"/>
+                    <property value="50" name="auxiliary;index"/>
+                    <property name="class"/>
+                    <property value="50" name="auxiliary;index"/>
+                    <property value="50" name="auxiliary;index"/>
+                    <property value="50" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/spring-object;0">
+                        <property value="POSIOSCheckVersion" name="bean"/>
+                        <property value="51" name="auxiliary;wrapIn"/>
+                        <property value="51" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </pattern>
+            <pattern type="org.mule.tooling.ui.modules.core.pattern.echo" name="Echo" entity-id="Echo#3">
+                <properties>
+                    <property value="52" name="auxiliary;index"/>
+                    <property value="52" name="auxiliary;index"/>
+                    <property value="52" name="auxiliary;index"/>
+                    <property value="52" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="insertGuestScheduler" entity-id="b588d51b-e59b-4467-9805-2860cbef4ef0">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="53" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="53" name="auxiliary;index"/>
+            <property value="53" name="auxiliary;index"/>
+            <property value="53" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#4">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/quartz/endpoint" name="Quartz" entity-id="Quartz#1">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="checkInJob" name="jobName"/>
+                    <property name="cronExpression"/>
+                    <property value="300000" name="repeatInterval"/>
+                    <property name="repeatCount"/>
+                    <property name="startDelay"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property value="10000" name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property value="54" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/quartz/custom-job;0">
+                        <property value="checkInJob" name="job-ref"/>
+                        <property value="55" name="auxiliary;wrapIn"/>
+                        <property value="55" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </endpoint>
+            <pattern type="org.mule.tooling.ui.modules.core.pattern.echo" name="Echo" entity-id="Echo#4">
+                <properties>
+                    <property value="56" name="auxiliary;index"/>
+                    <property value="56" name="auxiliary;index"/>
+                    <property value="56" name="auxiliary;index"/>
+                    <property value="56" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="checkOutGuestScheduler" entity-id="d77344a7-f828-4476-97ab-6384c7d9fa63">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="57" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="57" name="auxiliary;index"/>
+            <property value="57" name="auxiliary;index"/>
+            <property value="57" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#5">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/quartz/endpoint" name="checkoutQurtz" entity-id="Quartz#2">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="checkOutJob" name="jobName"/>
+                    <property name="cronExpression"/>
+                    <property value="300000" name="repeatInterval"/>
+                    <property name="repeatCount"/>
+                    <property name="startDelay"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property value="10000" name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property value="58" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/quartz/event-generator-job;0">
+                        <property value="DEFAULT" name="groupName"/>
+                        <property value="DEFAULT" name="jobGroupName"/>
+                        <property value="59" name="auxiliary;wrapIn"/>
+                        <property value="59" name="auxiliary;index"/>
+                        <property-collection name="@http://www.mulesoft.org/schema/mule/quartz/payload;1">
+                            <property value="hello" name="text"/>
+                            <property value="60" name="auxiliary;wrapIn"/>
+                            <property value="60" name="auxiliary;index"/>
+                        </property-collection>
+                    </property-collection>
+                </properties>
+            </endpoint>
+            <endpoint message-exchange-pattern="OneWay" direction="Outbound" type="http://www.mulesoft.org/schema/mule/vm/endpoint" name="checkOutVM" entity-id="VM#1">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property value="checkoutFlow2" name="path"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property value="61" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/vm/transaction;0">
+                        <property value="NONE" name="action"/>
+                        <property value="62" name="auxiliary;wrapIn"/>
+                        <property value="62" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </endpoint>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="IOSCheckInNotificationScheduler" entity-id="fa358aa0-6a32-4cc1-a28b-67e785d5c073">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="63" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="63" name="auxiliary;index"/>
+            <property value="63" name="auxiliary;index"/>
+            <property value="63" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#6">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/quartz/endpoint" name="Quartz" entity-id="Quartz#3">
+                <properties>
+                    <property value="true" name="auxiliary;erased;mimeType"/>
+                    <property value="" name="repeatCount"/>
+                    <property value="false" name="disableTransportTransformer"/>
+                    <property value="checkInotificationScheduler" name="jobName"/>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="" name="ref"/>
+                    <property value="" name="transformer-refs"/>
+                    <property value="21600000" name="repeatInterval"/>
+                    <property value="" name="address"/>
+                    <property value="" name="startDelay"/>
+                    <property value="true" name="auxiliary;erased;encoding"/>
+                    <property value="" name="encoding"/>
+                    <property value="" name="cronExpression"/>
+                    <property value="10000" name="responseTimeout"/>
+                    <property value="" name="mimeType"/>
+                    <property value="" name="connector-ref"/>
+                    <property value="64" name="auxiliary;index"/>
+                    <property name="updated"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/quartz/event-generator-job;0">
+                        <property value="IOSNOTIFICATION" name="groupName"/>
+                        <property value="IOSNOTIFICATION" name="jobGroupName"/>
+                        <property value="65" name="auxiliary;wrapIn"/>
+                        <property value="65" name="auxiliary;index"/>
+                        <property-collection name="@http://www.mulesoft.org/schema/mule/quartz/payload;1">
+                            <property value="input" name="text"/>
+                            <property value="66" name="auxiliary;wrapIn"/>
+                            <property value="66" name="auxiliary;index"/>
+                        </property-collection>
+                    </property-collection>
+                </properties>
+                <description></description>
+            </endpoint>
+            <endpoint message-exchange-pattern="OneWay" direction="Outbound" type="http://www.mulesoft.org/schema/mule/vm/endpoint" name="VM" entity-id="VM#2">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property value="IOSCheckInNotificationScheduler" name="path"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property value="67" name="auxiliary;index"/>
+                    <property value="67" name="auxiliary;index"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="Java" entity-id="Java#4">
+                <properties>
+                    <property value="68" name="auxiliary;index"/>
+                    <property value="68" name="auxiliary;index"/>
+                    <property value="68" name="auxiliary;index"/>
+                    <property name="class"/>
+                    <property value="68" name="auxiliary;index"/>
+                    <property value="68" name="auxiliary;index"/>
+                    <property value="68" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/spring-object;0">
+                        <property value="checkInNotificationJob" name="bean"/>
+                        <property value="69" name="auxiliary;wrapIn"/>
+                        <property value="69" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="checkoutFlow2" entity-id="9ad32ab5-580c-4317-b4bb-cfc2eb2817c6">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="70" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="70" name="auxiliary;index"/>
+            <property value="70" name="auxiliary;index"/>
+            <property value="70" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#7">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/vm/endpoint" name="VM" entity-id="VM#3">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property value="checkoutFlow2" name="path"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="responseTimeout"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property value="71" name="auxiliary;index"/>
+                    <property value="71" name="auxiliary;index"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/scripting/groovyComponent" name="Groovy" entity-id="Groovy#1">
+                <properties>
+                    <property value="72" name="auxiliary;index"/>
+                    <property value="72" name="auxiliary;index"/>
+                    <property value="72" name="auxiliary;index"/>
+                    <property value="72" name="auxiliary;index"/>
+                    <property value="72" name="auxiliary;index"/>
+                    <property value="72" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script;0">
+                        <property value="println &quot;checking out guest....&quot;" name="text"/>
+                        <property value="Groovy" name="engine"/>
+                        <property value="73" name="auxiliary;wrapIn"/>
+                        <property value="73" name="auxiliary;index"/>
+                    </property-collection>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/scripting/script-for-properties;0">
+                        <property value="println &quot;checking out guest....&quot;" name="text"/>
+                        <property value="Groovy" name="engine"/>
+                        <property value="73" name="auxiliary;wrapIn"/>
+                        <property value="73" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="getListOfRestaurants" entity-id="8a2336c4-bb23-4dfc-89fd-3e2db03af05c">
+        <properties>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property value="75" name="auxiliary;index"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property value="75" name="auxiliary;index"/>
+            <property value="75" name="auxiliary;index"/>
+            <property value="75" name="auxiliary;index"/>
+        </properties>
+        <lane isChoiceOtherwiseLane="false" index="0" hadOnlyOneElement="false" entity-id="compartment-lane#8">
+            <endpoint message-exchange-pattern="OneWay" direction="Inbound" type="http://www.mulesoft.org/schema/mule/http/endpoint" name="HTTP" entity-id="HTTP#4">
+                <properties>
+                    <property value="one-way" name="exchange-pattern"/>
+                    <property value="request-response" name="exchange-pattern"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property value="http://www.mulesoft.org/schema/mule/http/endpoint" name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property name="httpLabel"/>
+                    <property value="localhost" name="host"/>
+                    <property value="9191" name="port"/>
+                    <property value="posios/getCompany" name="path"/>
+                    <property name="method"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="followRedirects"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property name="connector-ref"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="responseTransformer-refs"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property name="user"/>
+                    <property name="password"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property name="contentType"/>
+                    <property name="keep-alive"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property value="76" name="auxiliary;index"/>
+                    <property value="76" name="auxiliary;index"/>
+                </properties>
+            </endpoint>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" name="Object to String" entity-id="Object to String#4">
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property value="77" name="auxiliary;index"/>
+                    <property name="mimeType"/>
+                    <property value="77" name="auxiliary;index"/>
+                    <property value="77" name="auxiliary;index"/>
+                    <property value="77" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+            <pattern type="http://www.mulesoft.org/schema/mule/core/component" name="Java" entity-id="Java#5">
+                <properties>
+                    <property value="78" name="auxiliary;index"/>
+                    <property value="78" name="auxiliary;index"/>
+                    <property value="78" name="auxiliary;index"/>
+                    <property name="class"/>
+                    <property value="78" name="auxiliary;index"/>
+                    <property value="78" name="auxiliary;index"/>
+                    <property value="78" name="auxiliary;index"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/core/spring-object;0">
+                        <property value="POSIOSGetCompany" name="bean"/>
+                        <property value="79" name="auxiliary;wrapIn"/>
+                        <property value="79" name="auxiliary;index"/>
+                    </property-collection>
+                </properties>
+            </pattern>
+            <pattern type="org.mule.tooling.ui.modules.core.pattern.echo" name="Echo" entity-id="Echo#5">
+                <properties>
+                    <property value="80" name="auxiliary;index"/>
+                    <property value="80" name="auxiliary;index"/>
+                    <property value="80" name="auxiliary;index"/>
+                    <property value="80" name="auxiliary;index"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <description></description>
+</mule-configuration>
