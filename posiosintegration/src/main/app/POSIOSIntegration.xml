@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:quartz="http://www.mulesoft.org/schema/mule/quartz" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.3.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd 
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
+http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/current/mule-quartz.xsd 
+http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/current/mule-scripting.xsd 
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd 
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd ">
+    <spring:beans>
+    	<spring:bean id="frontDeskDS" name="frontDeskDS" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <spring:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+            <spring:property name="url" value="jdbc:mysql://localhost:3306/frontdesk"/>
+            <spring:property name="username" value="root"/>
+            <spring:property name="password" value="password"/>
+        </spring:bean>    
+        
+    	<spring:bean id="POSIOSHotelRoom" name="POSIOSHotelRoom" class="com.atigus.posios.POSIOSHotelRoomImpl">
+        	<spring:property name="pOSIOSLoginToken" ref="pOSIOSLoginToken"></spring:property>
+        </spring:bean>
+        
+        <spring:bean id="POSIOSCompany" name="POSIOSCompany" class="com.atigus.posios.POSIOSCompanyImpl">
+     
+        </spring:bean>
+        
+         <spring:bean id="POSIOSReceipt" name="POSIOSReciept" class="com.atigus.posios.POSIOSReceiptImpl">
+     		<spring:property name="pOSIOSCompany" ref="POSIOSCompany" />
+        </spring:bean>
+        
+        <spring:bean id="POSIOSCheckVersion" name="POSIOSCheckVersion" class="com.atigus.posios.POSIOSCheckVersionImpl">
+        	<spring:property name="pOSIOSLoginToken" ref="pOSIOSLoginToken"></spring:property>
+        	
+        </spring:bean>
+        <spring:bean id="POSIOSGetCompany" name="POSIOSGetCompany" class="com.atigus.posios.POSIOSGetCompanyImpl">
+        	<spring:property name="pOSIOSLoginToken" ref="pOSIOSLoginToken">
+        	</spring:property>
+        </spring:bean>
+        <spring:bean id="POSIOSGetTodayReceipts" name="POSIOSGetTodayReceipts" class="com.atigus.posios.POSIOSTodayReceiptImpl">
+        	<spring:property name="pOSIOSLoginToken" ref="pOSIOSLoginToken">
+        	</spring:property>
+        </spring:bean>
+        
+        <spring:bean id="POSIOSGuestReceipt" name="POSIOSGuestReceipt" class="com.atigus.posios.request.POSIOSGuestReceipt">
+        	<spring:property name="pOSIOSReceipt" ref="POSIOSReceipt">
+        	</spring:property>
+        	<spring:property name="pOSIOSLoginToken" ref="pOSIOSLoginToken" />
+        	<spring:property name="pOSIOSCompany" ref="POSIOSCompany"/>
+        </spring:bean>
+        
+        <spring:bean id="POSIOSPostGuest" name="POSIOSPostGuest" class="com.atigus.posios.POSIOSPostGuestImpl">
+        	<spring:property name="pOSIOSLoginToken" ref="pOSIOSLoginToken"></spring:property>
+        	<spring:property name="pOSIOSHotelRoom" ref="POSIOSHotelRoom"></spring:property>
+        	<spring:property name="pOSIOSCompany" ref="POSIOSCompany"></spring:property>
+        </spring:bean>
+        
+         <spring:bean id="checkInJob" name="checkInJob" class="com.atigus.posios.job.POSIOSCheckInJob">
+         	<spring:property name="frontDeskDS" ref="frontDeskDS"></spring:property>
+         	<spring:property name="pOSIOSPostGuest" ref="POSIOSPostGuest"></spring:property>
+         </spring:bean>
+         
+         <spring:bean id="checkInNotificationJob" name="checkInNotificationJob" class="com.atigus.posios.job.IOSCheckInNotificationJob">
+         	<spring:property name="frontDeskDS" ref="frontDeskDS"></spring:property>
+         
+         </spring:bean>
+        
+    </spring:beans>
+    <spring:beans>
+        <spring:bean id="pOSIOSLoginToken" name="pOSIOSLoginToken" class="com.atigus.posios.POSIOSLoginTokenImpl">
+        	
+        </spring:bean>
+        
+    </spring:beans>
+    <flow name="getTodayReceipts" doc:name="getTodayReceipts">
+        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9191" doc:name="HTTP" path="posios/todayReceipts"/>
+        <object-to-string-transformer doc:name="Object to String"/>
+         <component doc:name="Java">
+            <spring-object bean="POSIOSGuestReceipt"/>
+        </component>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <echo-component doc:name="Echo"/>
+    </flow>
+    <flow name="insertGuest" doc:name="insertGuest">
+        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9191" path="posios/postGuest" doc:name="HTTP"/>
+        <object-to-string-transformer doc:name="Object to String"/>
+        <component doc:name="Java">
+        	<spring-object  bean="POSIOSPostGuest"/>
+        </component>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <echo-component doc:name="Echo"/>
+    </flow>
+   
+    <flow name="checkVersion" doc:name="checkVersion">
+        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9191" path="posios/checkVersion" doc:name="HTTP"/>
+        <object-to-string-transformer doc:name="Object to String"/>
+        <component doc:name="Java">
+            <spring-object bean="POSIOSCheckVersion"/>
+        </component>
+        <echo-component doc:name="Echo"/>
+    </flow>
+    <flow name="insertGuestScheduler" doc:name="insertGuestScheduler">
+        <quartz:inbound-endpoint jobName="checkInJob" repeatInterval="300000" responseTimeout="10000" doc:name="Quartz">
+            <quartz:custom-job job-ref="checkInJob"/>
+        </quartz:inbound-endpoint>
+        <echo-component doc:name="Echo"/>
+    </flow>
+    <flow name="checkOutGuestScheduler" doc:name="checkOutGuestScheduler">
+        <quartz:inbound-endpoint jobName="checkOutJob" repeatInterval="300000" responseTimeout="10000" doc:name="checkoutQurtz">
+            <quartz:event-generator-job groupName="DEFAULT" jobGroupName="DEFAULT">
+                <quartz:payload>hello</quartz:payload>
+            </quartz:event-generator-job>
+        </quartz:inbound-endpoint>
+        <vm:outbound-endpoint exchange-pattern="one-way" path="checkoutFlow2" doc:name="checkOutVM">
+            <vm:transaction action="NONE"/>
+        </vm:outbound-endpoint>
+    </flow>
+    <flow name="IOSCheckInNotificationScheduler" doc:name="IOSCheckInNotificationScheduler">
+        <quartz:inbound-endpoint jobName="checkInotificationScheduler" repeatInterval="21600000" responseTimeout="10000" doc:name="Quartz">
+            <quartz:event-generator-job groupName="IOSNOTIFICATION" jobGroupName="IOSNOTIFICATION">
+                <quartz:payload>input</quartz:payload>
+            </quartz:event-generator-job>
+        </quartz:inbound-endpoint>
+        <vm:outbound-endpoint exchange-pattern="one-way" path="IOSCheckInNotificationScheduler" doc:name="VM"/>
+        <component doc:name="Java">
+            <spring-object bean="checkInNotificationJob"/>
+        </component>
+    </flow>
+    <flow name="checkoutFlow2" doc:name="checkoutFlow2">
+        <vm:inbound-endpoint exchange-pattern="one-way" path="checkoutFlow2" doc:name="VM"/>
+        <scripting:component doc:name="Groovy">
+            <scripting:script engine="Groovy">
+                <scripting:text><![CDATA[println "checking out guest...."]]></scripting:text>
+            </scripting:script>
+        </scripting:component>
+    </flow>
+    <flow name="getListOfRestaurants" doc:name="getListOfRestaurants">
+        <http:inbound-endpoint exchange-pattern="request-response" host="localhost" port="9191" path="posios/getCompany" doc:name="HTTP"/>
+        <object-to-string-transformer doc:name="Object to String"/>
+        <component doc:name="Java">
+        	 <spring-object bean="POSIOSGetCompany"/>
+        </component>
+        <echo-component doc:name="Echo"/>
+    </flow>
+</mule>
